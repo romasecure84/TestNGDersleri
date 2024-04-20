@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -24,14 +25,16 @@ public class Test04 {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
+    @Parameters({"browser","baseURL"})
     @Test
-    public void test01() throws InterruptedException {
-        driver.get("https://www.trendyol.com");
+    public void test01(String browser, String baseURL) throws InterruptedException {
+        driver.get(baseURL);
+        System.out.println(browser);
     }
 
     @AfterClass
     public  void tearDown() throws InterruptedException {
         Thread.sleep(3000);
-        //driver.quit();
+        driver.quit();
     }
 }

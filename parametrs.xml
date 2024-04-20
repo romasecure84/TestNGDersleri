@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="test suite">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="baseURL" value="https://www.google.az/"/>
+    <test name="parametrExample">
+        <classes>
+            <class name="tests.Test04"/>
+        </classes>
+    </test>
+</suite>
