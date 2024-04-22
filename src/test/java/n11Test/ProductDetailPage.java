@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ProductDetailPage {
-    WebDriver driver;
-    By addToBasketLocator= By.className("addBasketUnify");
+    private final WebDriver driver;
+    private final By addToBasketLocator= By.className("addBasketUnify");
 
     public  ProductDetailPage(WebDriver driver){
         this.driver=driver;
