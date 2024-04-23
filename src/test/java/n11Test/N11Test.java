@@ -11,8 +11,8 @@ public class N11Test extends BaseTest{
 
     @Test(priority = 1)
     public void searchTest() throws InterruptedException {
-        driver.get("https://www.n11.com/");
         tabBarPage=new TabBarPage(driver);
+        tabBarPage.navigateTo("https://www.n11.com/");
         tabBarPage.search("laptop");
     }
 

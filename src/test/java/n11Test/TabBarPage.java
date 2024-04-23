@@ -6,19 +6,21 @@ import org.openqa.selenium.WebDriver;
 
 import java.awt.image.Kernel;
 
-public class TabBarPage {
-    private final WebDriver driver;
+public class TabBarPage extends BasePage {
+
     private final By searchBox = By.xpath("//*[@id='searchData']");
     private final By basketTotalNumber = By.xpath("//*[@class='basketTotalNum']");
 
-    public  TabBarPage(WebDriver driver){
-        this.driver=driver;
+    public TabBarPage(WebDriver driver) {
+        super(driver);
     }
-    public void search(String searchWord){
+
+    public void search(String searchWord) {
         driver.findElement(searchBox).click();
-        driver.findElement(searchBox).sendKeys(searchWord+ Keys.ENTER);
+        driver.findElement(searchBox).sendKeys(searchWord + Keys.ENTER);
     }
-    public String getBasketTotalNumber(){
+
+    public String getBasketTotalNumber() {
         return driver.findElement(basketTotalNumber).getText();
     }
 }
