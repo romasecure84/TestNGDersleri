@@ -26,8 +26,9 @@ public class N11Test extends BaseTest{
     }
 
     @Test(priority = 3)
-    public void addToCardTest() {
+    public void addToCardTest() throws InterruptedException {
         productDetailPage=new ProductDetailPage(driver);
+        Thread.sleep(2000);
         productDetailPage.addToCard();
         softAssert.assertTrue(tabBarPage.getBasketTotalNumber().equals("1"));
     }
