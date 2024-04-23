@@ -27,7 +27,7 @@ public class BaseTest {
     @AfterClass
     public  void tearDown() throws InterruptedException {
         Thread.sleep(3000);
-        //driver.quit();
+        driver.quit();
         softAssert.assertAll();
     }
 }

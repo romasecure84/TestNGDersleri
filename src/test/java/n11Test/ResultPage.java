@@ -13,10 +13,10 @@ public class ResultPage extends BasePage{
     }
 
     public WebElement getResultWebElement() {
-        return driver.findElement(resultTextLocator);
+        return find(resultTextLocator);
     }
 
     public void clickToProduct() {
-        driver.findElement(productNameLocator).click();
+        clickToWebElement(productNameLocator);
     }
 }

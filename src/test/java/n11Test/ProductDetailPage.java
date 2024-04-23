@@ -11,6 +11,6 @@ public class ProductDetailPage extends BasePage {
     }
 
     public void addToCard() {
-        driver.findElement(addToBasketLocator).click();
+        clickToWebElement(addToBasketLocator);
     }
 }

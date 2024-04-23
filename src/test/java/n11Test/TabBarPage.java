@@ -16,11 +16,11 @@ public class TabBarPage extends BasePage {
     }
 
     public void search(String searchWord) {
-        driver.findElement(searchBox).click();
-        driver.findElement(searchBox).sendKeys(searchWord + Keys.ENTER);
+        clickToWebElement(searchBox);
+        find(searchBox).sendKeys(searchWord + Keys.ENTER);
     }
 
     public String getBasketTotalNumber() {
-        return driver.findElement(basketTotalNumber).getText();
+        return find(basketTotalNumber).getText();
     }
 }
