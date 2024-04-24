@@ -28,7 +28,7 @@ public class N11Test extends BaseTest {
         Thread.sleep(2000);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,700)");
-        resultPage.clickToProduct();
+        resultPage.clickToProductList(5);
     }
 
     @Test(priority = 3)

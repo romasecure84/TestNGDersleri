@@ -3,10 +3,13 @@ package n11Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ResultPage extends BasePage{
+import java.util.List;
+
+public class ResultPage extends BasePage {
     //private final By resultTextLocator = By.xpath("//*[@class='resultText ']");
     @FindBy(xpath = "//*[@class='resultText ']")
     private WebElement resultText;
@@ -15,9 +18,12 @@ public class ResultPage extends BasePage{
     @FindBy(xpath = "(//*[@class='productName'])[2]")
     private WebElement productName;
 
+    @FindAll(@FindBy(xpath = "//*[@class='productName']"))
+    public List<WebElement> productList;
+
     public ResultPage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     public WebElement getResultWebElement() {
@@ -28,5 +34,9 @@ public class ResultPage extends BasePage{
     public void clickToProduct() {
         //clickToWebElement(productNameLocator);
         productName.click();
+    }
+
+    public void clickToProductList(int index) {
+        productList.get(index).click();
     }
 }
